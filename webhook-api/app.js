@@ -1,7 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const webhookRoutes = require('./src/routes/webhookRoutes');
 
 const app = express();
+app.use(cors());
 
 // Middleware
 app.use(express.json());

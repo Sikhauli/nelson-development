@@ -10,7 +10,7 @@ const App = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [originalInput, setOriginalInput] = useState('');
   
-  const apiService = new ApiService(process.env.REACT_APP_API_URL);
+  const apiService = new ApiService(import.meta.env.VITE_API_URL);
 
   const handleSubmit = async ({ inputData, endpointUrl, email }) => {
     setIsSubmitting(true);
@@ -50,5 +50,45 @@ const App = () => {
     </div>
   );
 };
+
+
+{/*  return (
+  <div className="app-container">
+  <div className="content-wrapper">
+    <div className="hero-section">
+      <div className="hero-content">
+        <header className="app-header">
+          <h1 className="gradient-text">String Processor</h1>
+          <p className="subtitle">Transform your text into alphabetically sorted magic</p>
+        </header>
+        
+        <main className="app-content">
+          <WebhookForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
+        </main>
+      </div>
+      
+      <div className="illustration-container">
+        <img 
+          src="https://storyset.com/illustration/data-processing/amico" 
+          alt="Data processing illustration"
+          className="animated-illustration"
+          onError={(e) => {
+            e.target.src = 'https://storyset.com/illustration/data-processing/bro';
+          }}
+        />
+      </div>
+    </div>
+    
+    <div className="results-section">
+      <ResultDisplay 
+        result={result} 
+        error={error} 
+        originalInput={originalInput} 
+      />
+    </div>
+  </div>
+</div>  
+);
+ */}
 
 export default App;
