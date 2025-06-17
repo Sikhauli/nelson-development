@@ -15,14 +15,20 @@ const ResultDisplay = ({ result, error, originalInput }) => {
 
   return (
     <div className="result-container">
-      <h3>Result:</h3>
-      <div className="result-json">
-        <pre>{JSON.stringify(result, null, 2)}</pre>
-      </div>
-      <div className="result-breakdown">
-        <p>Original string: <strong>{originalInput}</strong></p>
-        <p>Sorted characters: <strong>{result.word?.join('')}</strong></p>
-      </div>
+        <h3 className="result-title">Processing Result</h3>
+        <div className="result-json">
+         <pre>{JSON.stringify(result, null, 2)}</pre>
+        </div>
+        <div className="result-breakdown">
+         <p className="result-original">
+         <span className="result-label">Original string:</span>
+         <span className="result-value">{originalInput}</span>
+         </p>
+         <p className="result-sorted">
+         <span className="result-label">Sorted characters:</span>
+         <span className="result-value">{result.word?.join('')}</span>
+         </p>
+        </div>
     </div>
   );
 };
